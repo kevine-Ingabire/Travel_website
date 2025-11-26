@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <title>complete responsive tour and travels agency website design tutorial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <div id="menu-bar"  class="fas fa-bars"></div>
+    <a href="#" class="logo"><span>T</span>ravel</a>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#book">Book</a>
+        <a href="#packages">Packages</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#review">Review</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <i class="fas fa-user" id="login-btn"></i>
+    </div>
+    <form action="#" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here...">
+        <label for="search-bar" class="fas fa-search" id="search-submit"></label>
+        <span id="search-message"></span>
+    </form>
+</header>  
+    
+<!-- ✅ Login form with close button -->
+<div class="login-form-container" id="login-form">
+    <i class="fas fa-times" id="form-close"></i>
+    <form action="login.php" method="POST" id="login-form-data">
+        <h3>login</h3>
+        <input type="email" name="email" class="box" placeholder="enter your email" required>
+        <input type="password" name="password" class="box" placeholder="enter your password" required>
+        <input type="submit" value="login now" class="btn">
+        <div class="remember-me">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">remember me</label>
+        </div>
+        <p>forget password? <a href="#">click here</a></p>
+        <p>don't have an account? <a href="#" id="show-register">register now</a></p>
+        <!-- This div will show messages from login.php -->
+        <div id="login-message" class="form-message"></div>
+    </form>
+</div>
+
+<!-- ✅ Role selection form with close button -->
+<div class="login-form-container" id="role-selection">
+    <i class="fas fa-times" id="role-close"></i>
+    <form>
+        <h3>Login as:</h3>
+       
+        <button type="button" class="btn" id="user-btn">User</button>
+        
+    </form>
+    
+</div>
+
+<!-- ✅ Registration form with close button -->
+<div class="login-form-container" id="user-register">
+    <i class="fas fa-times" id="register-close"></i>
+    <form action="register.php" method="POST" id="register-form">
+        <h3>Register</h3>
+        <input type="text" name="name" class="box" placeholder="Full Name" required pattern="^[a-zA-Z\s]{2,50}$" 
+         title="Only letters and spaces, 2-50 characters" >
+        <input type="email" name="email" class="box" placeholder="Email" required>
+        <input type="password" name="password" class="box" placeholder="Password" required>
+        <input type="password" name="confirm_password" class="box" placeholder="Confirm Password" required>
+        <select class="box" name="country" required>
+            <option value="">Select Country</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="USA">USA</option>
+            <option value="France">France</option>
+            <option value="Egypt">Egypt</option>
+            <option value="Canada">Canada</option>
+            <option value="Germany">Germany</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Uganda">Uganda</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Australia">Australia</option>
+        </select>
+        <input type="submit" class="btn" value="Register">
+
+         <!-- This will show messages from register.php -->
+        <p id="register-message" class="form-message"></p>
+
+        <div style="text-align:center; margin: 20px;">
+    <a href="index.html#home" class="btn">⬅️ Back to Home</a>
+  </div>
+    </form>
+</div>
+
+<section class="home" id="home">
+<div class="content">
+<h3>adventure is worthwhile</h3>
+<p>discover  new place  with us, adventure awaits</p>
+<a href="#services" class="btn">discover more</a>
+</div>
+<div class="controls">
+    <span class="vid-btn active" data-src="images/vid-1.mp4"></span>
+    <span class="vid-btn" data-src="images/vid-2.mp4"></span>
+    <span class="vid-btn" data-src="images/vid-3.mp4"></span>
+    <span class="vid-btn" data-src="images/vid-4.mp4"></span>
+    <span class="vid-btn" data-src="images/vid-5.mp4"></span>
+</div>
+<div class="video-container">
+    <video src="images/vid-1.mp4" id="video-slider" loop autoplay muted></video>
+</div>
+</section>
+
+<section class="book" id="book">
+  <h1 class="heading">
+    <span>b</span>
+    <span>o</span>
+    <span>o</span>
+    <span>k</span>
+    <span class="space"></span>
+    <span>n</span>
+    <span>o</span>
+    <span>w</span>
+  </h1>
+
+  <div class="row">
+    <div class="image">
+      <img src="images/book-img.jpg" alt="">
+    </div>
+
+    <form action="booking.php" method="POST" id="booking-form">
+    <div class="inputBox">
+        <h3>Name</h3>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required pattern="^[a-zA-Z\s]{2,50}$" 
+         title="Only letters and spaces, 2-50 characters">
+    </div>
+    <div class="inputBox">
+        <h3>Number of Guests</h3>
+        <input type="number" name="guests" id="guests" placeholder="How many guests?" required>
+    </div>
+    <div class="inputBox">
+        <h3>Destination</h3>
+        <select name="destination" id="destination" required>
+            <option value="">-- Select Place --</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="Sydney">Sydney</option>
+            <option value="Hawaii">Hawaii</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Paris">Paris</option>
+            <option value="Egypt">Egypt</option>
+        </select>
+    </div>
+    <div class="inputBox">
+        <h3>Payment Method</h3>
+        <select name="payment" id="payment" required>
+            <option value="">-- Select Method --</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="PayPal">PayPal</option>
+            <option value="Visa">Visa</option>
+            <option value="MasterCard">MasterCard</option>
+        </select>
+    </div>
+    <div class="inputBox">
+        <h3>Leaving</h3>
+        <input type="date" name="leaving" id="leaving" required>
+    </div>
+    <input type="submit" class="btn" value="Book Now">
+</form>
+  </div>
+
+  <div id="confirmation-area" style="display:none; text-align: center; margin-top: 20px;">
+    <p id="confirmation-message" style="font-weight: bold; font-size: 18px; color: green;">
+      Thank you for booking with us! We'll get in touch with you shortly to confirm the details.
+    </p>
+    <button id="download-ticket" class="btn">Download Ticket</button>
+  </div>
+</section>
+
+<!-- JS Libraries (Place before </body>) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+<script>
+  const bookingForm = document.getElementById("booking-form");
+  const confirmation = document.getElementById("confirmation-message");
+  const downloadBtn = document.getElementById("download-ticket");
+  const confirmationArea = document.getElementById("confirmation-area");
+
+  bookingForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const guests = document.getElementById("guests").value;
+    const destination = document.getElementById("destination").value;
+    const payment = document.getElementById("payment").value;
+    const leaving = document.getElementById("leaving").value;
+
+    confirmationArea.style.display = "block";
+
+    // Store booking info
+    window.latestBooking = { name, guests, destination, leaving };
+  });
+
+  downloadBtn.addEventListener("click", async function () {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    const data = window.latestBooking;
+    if (!data) return alert("No booking data found!");
+
+    const qrUrl = await QRCode.toDataURL("https://your-travel-website.com");
+
+    doc.setFillColor(173, 216, 230); // Sky blue
+    doc.rect(0, 0, 210, 297, 'F');
+
+    doc.setTextColor(0, 0, 128);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(22);
+    doc.text("Travel Booking Ticket", 55, 30);
+
+    doc.setFontSize(14);
+    doc.text(`Name: ${data.name}`, 20, 60);
+    doc.text(`Guests: ${data.guests}`, 20, 70);
+    doc.text(`Destination: ${data.destination}`, 20, 80);
+    doc.text(`Leaving Date: ${data.leaving}`, 20, 90);
+
+    doc.setFontSize(16);
+    doc.setTextColor(0, 102, 0);
+    doc.text("Thank You For Trusting Us", 55, 150);
+
+    doc.addImage(qrUrl, "PNG", 145, 60, 40, 40);
+
+    doc.save("booking_ticket.pdf");
+  });
+</script>
+
+
+
+<!-- ✅ Everything else stays the same -->
+ 
+<section class="packages" id="packages">
+<h1 class="heading">
+  <span>p</span>
+  <span>a</span>
+  <span>c</span>
+  <span>k</span>
+  <span>a</span>
+  <span>g</span>
+  <span>e</span>
+  <span>s</span>
+</h1>
+<div  class="box-container">
+
+    <div class=" box">
+   <img src="images/p-1.jpg" alt="">
+  <div  class="content">
+    <h3><i class="fas fa-map-marker-alt"></i> Rwanda</h3>
+    <p>Welcome to your dream destination — where your journey begins!</p>
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+    </div>
+    <div class="price">$90.00 <span>$120.00</span></div>
+    <a href="#book" class="btn book-now" data-destination="Rwanda">book now</a>
+  </div>
+    </div>
+ <div class=" box">
+   <img src="images/p-2.webp" alt="">
+  <div  class="content">
+    <h3><i class="fas fa-map-marker-alt"></i> Sydney</h3>
+    <p>Welcome to your dream destination — where your journey begins!</p>
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+    </div>
+    <div class="price">$90.00 <span>$120.00</span></div>
+    <a href="#book" class="btn book-now" data-destination="Sydney">book now</a>
+  </div></div>
+  <div class=" box">
+   <img src="images/p-3.jpg" alt="">
+  <div  class="content">
+    <h3><i class="fas fa-map-marker-alt"></i> Hawaii</h3>
+    <p>Welcome to your dream destination — where your journey begins!</p>
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+    </div>
+    <div class="price">$90.00 <span>$120.00</span></div>
+    <a href="#book" class="btn book-now" data-destination="Hawaii">book now</a>
+  </div></div>
+  <div class=" box">
+   <img src="images/p-4.jpg" alt="">
+  <div  class="content">
+    <h3><i class="fas fa-map-marker-alt"></i> Mumbai</h3>
+    <p>Welcome to your dream destination — where your journey begins!</p>
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+    </div>
+    <div class="price">$90.00 <span>$120.00</span></div>
+    <a href="#book" class="btn book-now" data-destination="Mumbai">book now</a>
+  </div></div>
+
+  <div class=" box">
+   <img src="images/p-5.jpg" alt="">
+  <div  class="content">
+    <h3><i class="fas fa-map-marker-alt"> </i>Paris</h3>
+    <p>Welcome to your dream destination — where your journey begins!</p>
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+    </div>
+    <div class="price">$90.00 <span>$120.00</span></div>
+    <a href="#book" class="btn book-now" data-destination="Paris">book now</a>
+  </div></div>
+
+  <div class=" box">
+   <img src="images/p-6.jpg" alt="">
+  <div  class="content">
+    <h3><i class="fas fa-map-marker-alt"></i> Egypt</h3>
+    <p>Welcome to your dream destination — where your journey begins!</p>
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+    </div>
+    <div class="price">$90.00 <span>$120.00</span></div>
+    <a href="#book" class="btn book-now" data-destination="Egypt">book now</a>
+  </div></div>
+  
+
+
+
+</div>
+</section>
+<section class="services" id="services">
+    <h1 class="heading">
+  <span>s</span>
+  <span>e</span>
+  <span>r</span>
+  <span>v</span>
+  <span>i</span>
+  <span>c</span>
+  <span>e</span>
+  <span>s</span>
+</h1>
+<div class="box-container">
+<div class="box">
+    <i class="fas fa-hotel"></i>
+    <h3>affordable hotels</h3>
+    <p>We offer unforgettable travel experiences including guided tours, hotel bookings,
+         transportation, customized holiday packages, and 24/7 support
+         — all tailored to make your journey smooth, exciting, and worry-free.</p>
+</div>
+<div class="box">
+    <i class="fas fa-utensils"></i>
+    <h3>food and drinks</h3>
+    <p>We offer unforgettable travel experiences including guided tours, hotel bookings,
+         transportation, customized holiday packages, and 24/7 support
+         — all tailored to make your journey smooth, exciting, and worry-free.</p>
+</div>
+<div class="box">
+    <i class="fas fa-bullhorn"></i>
+    <h3>safety guide</h3>
+    <p>We offer unforgettable travel experiences including guided tours, hotel bookings,
+         transportation, customized holiday packages, and 24/7 support
+         — all tailored to make your journey smooth, exciting, and worry-free.</p>
+</div>
+<div class="box">
+    <i class="fas fa-globe-asia"></i>
+    <h3>arround the world</h3>
+    <p>We offer unforgettable travel experiences including guided tours, hotel bookings,
+         transportation, customized holiday packages, and 24/7 support
+         — all tailored to make your journey smooth, exciting, and worry-free.</p>
+</div>
+<div class="box">
+    <i class="fas fa-plane"></i>
+    <h3>fastest travel</h3>
+    <p>We offer unforgettable travel experiences including guided tours, hotel bookings,
+         transportation, customized holiday packages, and 24/7 support
+         — all tailored to make your journey smooth, exciting, and worry-free.</p>
+</div>
+<div class="box">
+    <i class="fas fa-hiking"></i>
+    <h3>adventures</h3>
+    <p>We offer unforgettable travel experiences including guided tours, hotel bookings,
+         transportation, customized holiday packages, and 24/7 support
+         — all tailored to make your journey smooth, exciting, and worry-free.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="gallery" id="gallery">
+  <h1 class="heading">
+  <span>g</span>
+  <span>a</span>
+  <span>l</span>
+  <span>l</span>
+  <span>e</span>
+  <span>r</span>
+  <span>y</span>
+</h1>
+<div class="box-container">
+
+  <div class="box">
+    <img src="images/travel-1.jpg" alt="">
+    <div class="content">
+      <h3>amazing places</h3>
+      <p>Find your next favorite destination with us.</p>
+      <a href="rwanda-hotel.html" class="btn">see more</a>
+    </div>
+  </div>
+  <div class="box">
+    <img src="images/travel-2.jpeg" alt="">
+    <div class="content">
+      <h3>amazing places</h3>
+      <p>Find your next favorite destination with us.</p>
+      <a href="radisson.html" class="btn">see more</a>
+    </div>
+  </div>
+  <div class="box">
+    <img src="images/travel-3.jpeg" alt="">
+    <div class="content">
+      <h3>amazing places</h3>
+      <p>Find your next favorite destination with us.</p>
+      <a href="hawaii-form.html" class="btn">see more</a>
+    </div>
+  </div>
+  <div class="box">
+    <img src="images/travel-4.jpeg" alt="">
+    <div class="content">
+      <h3>amazing places</h3>
+      <p>Find your next favorite destination with us.</p>
+      <a href="uae-form.html" class="btn">see more</a>
+    </div>
+  </div>
+  <div class="box">
+    <img src="images/travel-5.jpeg" alt="">
+    <div class="content">
+      <h3>amazing places</h3>
+      <p>Find your next favorite destination with us.</p>
+      <a href="mumbai-form.html" class="btn">see more</a>
+    </div>
+  </div>
+  <div class="box">
+    <img src="images/travel-6.jpeg" alt="">
+    <div class="content">
+      <h3>amazing places</h3>
+      <p>Find your next favorite destination with us.</p>
+      <a href="london-form.html" class="btn">see more</a>
+    </div>
+  </div>
+  <div class="box">
+    <img src="images/travel-7.jpeg" alt="">
+    <div class="content">
+      <h3>amazing places</h3>
+      <p>Find your next favorite destination with us.</p>
+      <a href="marriott-details.html" class="btn">see more</a>
+    </div>
+  </div>
+  <div class="box">
+    <img src="images/travel-8.jpeg" alt="">
+    <div class="content">
+      <h3>amazing places</h3>
+      <p>Find your next favorite destination with us.</p>
+      <a href="mountain-landscape-form.html
+      " class="btn">see more</a>
+    </div>
+  </div>
+
+
+</div>
+
+</section>
+<section class="review" id="review">
+  <h1 class="heading">
+  <span>r</span>
+  <span>e</span>
+  <span>v</span>
+  <span>i</span>
+  <span>e</span>
+  <span>w</span>
+</h1>
+<div class="swiper-container review-slider">
+<div class="swiper-wrapper">
+
+<div class="swiper-slide">
+  <div class="box"> 
+  <img src="images/r1.jpg" alt="">
+  <h3>LaDouce</h3>
+  <p>I loved how easy it was to explore destinations. 
+    The pictures and details made me want to book right away!</p>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+    </div>
+</div>
+</div>
+<div class="swiper-slide">
+    <div class="box"> 
+  <img src="images/r2.jpg" alt="">
+  <h3>Berret</h3>
+  <p>Your website helped me plan my honeymoon! So many romantic spots I hadn't even thought of.</p>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+    </div>
+</div>
+</div>
+<div class="swiper-slide">
+    <div class="box"> 
+  <img src="images/r3.jpg" alt="">
+  <h3>Racia</h3>
+  <p>As a solo traveler, I found the recommendations 
+    super helpful and inspiring. Can’t wait for my next trip!</p>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+    </div>
+</div>
+</div>
+<div class="swiper-slide">
+    <div class="box"> 
+  <img src="images/r4.jpg" alt="">
+  <h3>Evelyne</h3>
+  <p>User-friendly and full of useful info. The hidden gems section is my favorite!</p>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+    </div>
+</div>
+</div>
+<div class="swiper-slide">
+    <div class="box"> 
+  <img src="images/r5.jpg" alt="">
+  <h3>Gloria</h3>
+  <p>The virtual tour feature is awesome! It felt like I was already there.</p>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+    </div>
+</div>
+</div>
+<div class="swiper-slide">
+    <div class="box"> 
+  <img src="images/r6.jpg" alt="">
+  <h3>Sonia</h3>
+  <p>Thanks to your site, I’ve added 3 new places to my travel bucket list. Love the vibe and layout!</p>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+    </div>
+</div>
+</div>
+
+
+</div>
+</section>
+<section class="contact" id="contact">
+   <h1 class="heading">
+  <span>c</span>
+  <span>o</span>
+  <span>n</span>
+  <span>t</span>
+  <span>a</span>
+  <span>c</span>
+   <span>t</span>
+</h1>
+<div class="row">
+  <div class="image">
+    <img src="images/contact.jpg" alt="">
+  </div>
+ <form action="contact.php" method="POST" id="contact-form">
+    <div class="inputBox">
+        <input type="text" name="name" placeholder="name"  required pattern="^[a-zA-Z\s]{2,50}$" 
+         title="Only letters and spaces, 2-50 characters">
+        <input type="email" name="email" placeholder="email" required>
+    </div>
+    <div class="inputBox">
+        <input type="number" name="phone" placeholder="number" required title="only letters" >
+        <input type="text" name="subject" placeholder="subject" required>
+    </div>
+    <textarea name="message" placeholder="message" cols="30" rows="10" required></textarea>
+    <input type="submit" class="btn" value="send message">
+    <div id="contact-message" class="form-message"></div>
+</form>
+</div>
+
+</section>
+<section class="brand-container">
+  <div class="swiper-container brand-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"> <img src="images/b1.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="images/b2.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="images/b3.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="images/b4.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="images/b5.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<section class="footer">
+  <div class="box-container">
+    <div class="box">
+      <h3>about us</h3>
+      <p>We’re passionate about travel.
+From hidden gems to popular escapes,
+we help you explore the world with ease.</p>
+    </div>
+     <div class="box">
+      <h3>branch locations</h3>
+      <a href="#">Kigali</a>
+       <a href="#">USA</a>
+        <a href="#">france</a>
+         <a href="#">Egypt</a>
+    </div>
+ <div class="box">
+      <h3>quick links</h3>
+      <a href="#">home</a>
+       <a href="#">book</a>
+        <a href="#">packages</a>
+         <a href="#">services</a>
+         <a href="#">gallery</a>
+         <a href="#">review</a>
+         <a href="#">contact</a>
+    </div>
+
+    <div class="box">
+      <h3>follow us</h3>
+      <a href="#">instagram</a>
+       <a href="#">twitter</a>
+        <a href="#">linkedin</a>
+    </div>
+  </div>
+  <h1 class="credit"> created by <span>Mrs. Kevine Ingabire</span>| all rights reserved!</h1>
+</section>
+  <!-- Your other HTML content -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const bookButtons = document.querySelectorAll(".book-now");
+      const destination = document.querySelector("#destination");
+
+      bookButtons.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const selectedDestination = this.getAttribute("data-destination");
+          if (destinationSelect) {
+            placeSelect.value = selectedDestination;
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
